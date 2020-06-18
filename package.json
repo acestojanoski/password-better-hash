@@ -1,0 +1,37 @@
+{
+	"name": "password-better-hash",
+	"version": "1.0.0",
+	"description": "A better password hashing utility with zero dependencies.",
+	"main": "index.js",
+	"author": "Aleksandar Stojanoski",
+	"license": "MIT",
+	"scripts": {
+		"test": "xo"
+	},
+	"devDependencies": {
+		"ava": "^3.9.0",
+		"husky": "^4.2.5",
+		"xo": "^0.32.0"
+	},
+	"keywords": [
+		"hash",
+		"hashing",
+		"crypto",
+		"pbkdf2",
+		"async",
+		"password",
+		"passwordhash"
+	],
+	"xo": {
+		"prettier": true,
+		"rules": {
+			"no-unused-vars": "off",
+			"@typescript-eslint/method-signature-style": "off"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run test"
+		}
+	}
+}
