@@ -1,6 +1,6 @@
 {
 	"name": "password-better-hash",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A better password hashing utility with zero dependencies.",
 	"main": "lib/index.js",
 	"author": "Aleksandar Stojanoski",
@@ -49,7 +49,8 @@
 		],
 		"rules": {
 			"no-unused-vars": "off",
-			"@typescript-eslint/method-signature-style": "off"
+			"@typescript-eslint/method-signature-style": "off",
+			"capitalized-comments": "off"
 		}
 	},
 	"husky": {
