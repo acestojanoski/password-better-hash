@@ -1,6 +1,6 @@
 {
 	"name": "password-better-hash",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "A better password hashing utility with zero dependencies.",
 	"main": "lib/index.js",
 	"author": "Aleksandar Stojanoski",

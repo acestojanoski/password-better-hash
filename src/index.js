@@ -1,4 +1,4 @@
-import passwordBetterHash from '../lib/password-better-hash';
+import passwordBetterHash from './password-better-hash';
 
 export default passwordBetterHash;
 // support for common js
