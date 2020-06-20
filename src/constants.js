@@ -1,6 +1,4 @@
-'use strict';
-
-module.exports.defaults = {
+export const defaults = {
 	saltSize: 64,
 	iterations: 10000,
 	encoding: 'base64',

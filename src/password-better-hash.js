@@ -1,24 +1,22 @@
-'use strict';
+import {defaults} from './constants';
+import validate from './validate';
+import execute from './execute';
 
-const {defaults} = require('./constants');
-const validate = require('./validate');
-const execute = require('./execute');
-
-const passwordHash = (password, options = {}) => {
+const passwordBetterHash = (password, options = {}) => {
 	validate.hashInputs(password);
 	options = Object.assign({}, defaults, options, {password});
 
 	return execute(options);
 };
 
-passwordHash.async = async (password, options = {}) => {
+passwordBetterHash.async = async (password, options = {}) => {
 	validate.hashInputs(password);
 	options = Object.assign({}, defaults, options, {password});
 
 	return execute(options, {async: true});
 };
 
-passwordHash.compare = (password, hash, options = {}) => {
+passwordBetterHash.compare = (password, hash, options = {}) => {
 	validate.compareInputs(password, hash);
 	options = Object.assign({}, defaults, options, {password});
 
@@ -40,7 +38,7 @@ passwordHash.compare = (password, hash, options = {}) => {
 	return false;
 };
 
-passwordHash.compareAsync = async (password, hash, options = {}) => {
+passwordBetterHash.compareAsync = async (password, hash, options = {}) => {
 	validate.compareInputs(password, hash);
 	options = Object.assign({}, defaults, options, {password});
 
@@ -62,4 +60,4 @@ passwordHash.compareAsync = async (password, hash, options = {}) => {
 	return false;
 };
 
-module.exports = passwordHash;
+export default passwordBetterHash;

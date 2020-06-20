@@ -2,13 +2,31 @@
 	"name": "password-better-hash",
 	"version": "1.0.0",
 	"description": "A better password hashing utility with zero dependencies.",
-	"main": "index.js",
+	"main": "lib/index.js",
 	"author": "Aleksandar Stojanoski",
 	"license": "MIT",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org"
+	},
+	"homepage": "https://github.com/acestojanoski/password-better-hash#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/acestojanoski/password-better-hash.git"
+	},
+	"bugs": {
+		"url": "https://github.com/acestojanoski/password-better-hash/issues"
+	},
 	"scripts": {
-		"test": "xo"
+		"build": "babel src --out-dir lib --ignore node_modules",
+		"prepublishOnly": "npm run build",
+		"test": "xo && ava"
 	},
 	"devDependencies": {
+		"@ava/babel": "^1.0.1",
+		"@babel/cli": "^7.10.1",
+		"@babel/core": "^7.10.2",
+		"@babel/preset-env": "^7.10.2",
+		"@babel/register": "^7.10.3",
 		"ava": "^3.9.0",
 		"husky": "^4.2.5",
 		"xo": "^0.32.0"
@@ -20,10 +38,15 @@
 		"pbkdf2",
 		"async",
 		"password",
-		"passwordhash"
+		"passwordhash",
+		"password-hash",
+		"password-better-hash"
 	],
 	"xo": {
 		"prettier": true,
+		"ignores": [
+			"lib/"
+		],
 		"rules": {
 			"no-unused-vars": "off",
 			"@typescript-eslint/method-signature-style": "off"
@@ -33,5 +56,14 @@
 		"hooks": {
 			"pre-commit": "npm run test"
 		}
+	},
+	"ava": {
+		"files": [
+			"./test/**/*.test.js"
+		],
+		"babel": true,
+		"require": [
+			"./test/_register.js"
+		]
 	}
 }

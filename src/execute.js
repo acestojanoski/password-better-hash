@@ -1,6 +1,4 @@
-'use strict';
-
-const crypto = require('crypto');
+import crypto from 'crypto';
 
 const finalize = (salt, hash, encoding) => Buffer.concat([salt, hash]).toString(encoding);
 
@@ -29,4 +27,4 @@ const execute = (options, internalOptions = {}) => {
 	return finalize(salt, hash, encoding);
 };
 
-module.exports = execute;
+export default execute;

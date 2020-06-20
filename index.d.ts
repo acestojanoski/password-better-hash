@@ -27,7 +27,7 @@ interface Options {
 declare const passwordBetterHash: {
 	/**
 	 * Password hashing using the pbkdf2Sync function from the Node.js crypto module
-	 * @param {string} password - The password you want to hash
+	 * @param {string} password - Password you want to hash
 	 * @param {Options} options - Options
 	 * @returns string
 	 */
@@ -35,25 +35,25 @@ declare const passwordBetterHash: {
 
 	/**
 	 * Async password hashing using the pbkdf2 function from the Node.js crypto module
-	 * @param {string} password - The password you want to hash
+	 * @param {string} password - Password you want to hash
 	 * @param {Options} options - Options
 	 * @returns string
 	 */
 	async(password: string, options?: Options): Promise<string>;
 
 	/**
-	 * Compare the password and the hash
-	 * @param {string} password - The password that you want to compare
-	 * @param {string} hash - The hash that you want to compare
+	 * Compare password and hash
+	 * @param {string} password - Password you want to compare
+	 * @param {string} hash - Hash you want to compare
 	 * @param {Options} options - Options
 	 * @returns string
 	 */
 	compare(password: string, hash: string, options?: Options): boolean;
 
 	/**
-	 * Compare the password and the hash asynchronous
-	 * @param {string} password - The password that you want to compare
-	 * @param {string} hash - The hash that you want to compare
+	 * Compare password and hash asynchronously
+	 * @param {string} password - Password you want to compare
+	 * @param {string} hash - Hash you want to compare
 	 * @param {Options} options - Options
 	 * @returns string
 	 */

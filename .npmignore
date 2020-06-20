@@ -115,5 +115,11 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# ignore build
-lib/
+# custom
+src/
+test/
+.vscode/
+.circleci/
+.babelrc
+.prettierrc
+.editorconfig
